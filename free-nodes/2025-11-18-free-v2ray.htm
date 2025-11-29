@@ -228,9 +228,9 @@ A：关闭不必要的后台应用、定期清理设备内存、确保设备硬�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多出口节点如何优化访问速度？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
     <div class="panel-body">
-        通过为不同流量类型设置不同出口节点，WinXray 可以自动选择延迟最低的节点处理请求。结合策略组，可提高网页访问、视频播放和游戏等应用的速度与稳定性。<hr />    </div>
+        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 的 TUN 模式适合哪些应用？</h5></div>
@@ -238,24 +238,14 @@ A：关闭不必要的后台应用、定期清理设备内存、确保设备硬�
         TUN 模式拦截系统 IP 层流量，可实现全局代理。适合游戏、视频、浏览器和其他全局应用，实现低延迟和稳定连接，保证所有流量通过代理节点，提高访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
-    <div class="panel-body">
-        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 如何实现节点订阅自动更新？</h5></div>
-    <div class="panel-body">
-        用户可添加订阅 URL，Nekoray 定期自动下载并更新节点。这样可保持节点列表最新，有效减少手动维护，提高使用效率，同时保证网络连接稳定和可靠。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的日志功能如何调试连接问题？</h5></div>
-    <div class="panel-body">
-        Mihomo 日志可显示节点连接、请求延迟和错误信息。通过分析日志，可以判断节点是否不可达、TLS 握手失败或规则匹配异常，从而快速定位问题并解决。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用对即时通讯的优势是什么？</h5></div>
     <div class="panel-body">
         多路复用可让多个短连接共享同一通道，减少握手次数和加密开销，提高吞吐量和连接稳定性。适合即时通讯应用，保证消息快速传输和稳定接收。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 在高封锁环境下的优势是什么？</h5></div>
+    <div class="panel-body">
+        VLESS 去掉了内置加密，依赖 TLS 层安全，减少被 DPI 检测的特征。结合 XTLS 或 Reality 模式，可以更好地隐藏流量，提高在高封锁网络中的稳定性与隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 在 iOS 上无法连接时如何调试？</h5></div>
@@ -263,19 +253,29 @@ A：关闭不必要的后台应用、定期清理设备内存、确保设备硬�
         检查 iOS 的 VPN 配置权限是否授予，确认订阅链接或手动配置填写无误；查看 Surfboard 的日志或诊断页面，查看是否为 DNS 问题、TLS 错误或节点超时，并尝试切换节点或重启应用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的多出口节点如何优化访问速度？</h5></div>
     <div class="panel-body">
-        可以。用户可以设置策略组，PassWall2 会定期测速并根据延迟或成功率自动选择最优节点，实现智能节点切换，保证网络稳定性。<hr />    </div>
+        通过为不同流量类型设置不同出口节点，WinXray 可以自动选择延迟最低的节点处理请求。结合策略组，可提高网页访问、视频播放和游戏等应用的速度与稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 的规则文件如何支持广告屏蔽？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 的日志功能如何调试连接问题？</h5></div>
     <div class="panel-body">
-        规则文件可添加广告域名或 URL 列表，将请求重定向或阻断。结合策略组和自动更新，Surfboard 可实现全局广告屏蔽，提高浏览体验并节省带宽。<hr />    </div>
+        Mihomo 日志可显示节点连接、请求延迟和错误信息。通过分析日志，可以判断节点是否不可达、TLS 握手失败或规则匹配异常，从而快速定位问题并解决。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。这样可以为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。    </div>
+        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。这样可以为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 如何实现节点订阅自动更新？</h5></div>
+    <div class="panel-body">
+        用户可添加订阅 URL，Nekoray 定期自动下载并更新节点。这样可保持节点列表最新，有效减少手动维护，提高使用效率，同时保证网络连接稳定和可靠。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 的规则文件如何支持广告屏蔽？</h5></div>
+    <div class="panel-body">
+        规则文件可添加广告域名或 URL 列表，将请求重定向或阻断。结合策略组和自动更新，Surfboard 可实现全局广告屏蔽，提高浏览体验并节省带宽。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -304,16 +304,16 @@ A：关闭不必要的后台应用、定期清理设备内存、确保设备硬�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-node-share.htm" title="V2rayX节点 | 10月27日21.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享">V2rayX节点 | 10月27日21.9M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-ssr-subscribe.htm" title="V2rayX节点 | 10月7日22.4M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月7日22.4M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-9-clash-node.htm" title="V2rayX节点 | 11月9日20.9M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享">V2rayX节点 | 11月9日20.9M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-4-free-shadowrocket-node.htm" title="V2rayX节点 | 10月4日20.3M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅节点分享">V2rayX节点 | 10月4日20.3M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-31-node-share.htm" title="V2rayX节点 | 10月31日20.2M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点分享">V2rayX节点 | 10月31日20.2M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-clash-node.htm" title="V2rayX节点 | 11月11日22.9M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享">V2rayX节点 | 11月11日22.9M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-clash-windows.htm" title="V2rayX节点 | 11月19日21.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点分享">V2rayX节点 | 11月19日21.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-29-clash-v2ray-ss-ssr.htm" title="V2rayX节点 | 11月29日20.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点订阅节点分享">V2rayX节点 | 11月29日20.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-free-v2ray.htm" title="V2rayX节点 | 11月18日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享">V2rayX节点 | 11月18日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-14-free-ssr-node.htm" title="V2rayX节点 | 10月14日21.1M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月14日21.1M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-20-free-v2ray.htm" title="V2rayX节点 | 11月20日19.5M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 11月20日19.5M/S|免费SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-node-share.htm" title="V2rayX节点 | 10月11日19.3M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月11日19.3M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-node-share-links.htm" title="V2rayX节点 | 10月8日21M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月8日21M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-high-speed-nodes.htm" title="V2rayX节点 | 11月8日22.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享">V2rayX节点 | 11月8日22.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-node-share-links.htm" title="V2rayX节点 | 10月15日20.8M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月15日20.8M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-shadowrocket-node.htm" title="V2rayX节点 | 11月12日19.3M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">V2rayX节点 | 11月12日19.3M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-free-subscribe-node.htm" title="V2rayX节点 | 10月24日19.6M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点订阅节点分享">V2rayX节点 | 10月24日19.6M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-23-free-clash.htm" title="V2rayX节点 | 10月23日22M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月23日22M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-19-node-share.htm" title="V2rayX节点 | 10月19日19.9M/S|免费V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 10月19日19.9M/S|免费V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -325,7 +325,7 @@ A：关闭不必要的后台应用、定期清理设备内存、确保设备硬�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
