@@ -329,14 +329,44 @@ APK文件为安卓系统专用，PC用户可下载其桌面版本客户端，或
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现国内直连？</h5></div>
+    <div class="panel-heading"><h5>如何使用 Sing-box 配合 Clash Rules 实现精细分流？</h5></div>
     <div class="panel-body">
-        通过配置域名列表或 IP 段，将国内流量指向直连出口，而国外流量走代理节点。结合策略组和定期更新规则，可保持国内访问速度，同时优化海外访问体验。<hr />    </div>
+        将 Clash 的 rules 段提取出来转换为 Sing-box 的 routing 格式，或直接引用 rule-providers 源。Sing-box 的路由引擎支持更复杂的条件匹配，可结合 GeoIP 与 keyword 实现精细分流策略。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
+    <div class="panel-body">
+        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 V2Ray 中自定义路由规则？</h5></div>
+    <div class="panel-body">
+        在 V2Ray 中可以通过修改 config.json 文件中的 routing 部分来自定义路由规则。用户可以根据 IP 段、域名或地理位置来决定流量的去向，从而实现自动分流或访问加速的效果。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
+    <div class="panel-body">
+        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 是什么？</h5></div>
+    <div class="panel-body">
+        Sing-box 是新一代多协议代理框架，支持 VMess、VLess、Trojan、Hysteria、ShadowTLS 等协议。它比传统 V2Ray 更轻量化、模块化，并针对移动端和 Linux 系统进行了性能优化，受到开发者和高级用户的欢迎。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 与 Nekobox 有什么区别？</h5></div>
     <div class="panel-body">
         Nekoray 是基于 sing-box 的多平台代理客户端，支持 Windows、Linux 等系统；而 Nekobox 则是为 Android 设计的移动版本。两者共享相同的核心逻辑，均支持 VMess、VLess、Trojan 等协议，适合跨设备同步使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现国内直连？</h5></div>
+    <div class="panel-body">
+        通过配置域名列表或 IP 段，将国内流量指向直连出口，而国外流量走代理节点。结合策略组和定期更新规则，可保持国内访问速度，同时优化海外访问体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏连接？</h5></div>
+    <div class="panel-body">
+        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度和网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
@@ -346,37 +376,7 @@ APK文件为安卓系统专用，PC用户可下载其桌面版本客户端，或
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议和混淆组合如何选择？</h5></div>
     <div class="panel-body">
-        根据网络封锁情况选择合适协议和混淆组合，例如 tls1.2_ticket_auth 模拟 HTTPS 流量。选择最佳组合可提高抗封锁能力和稳定性，保证节点长期可用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
-    <div class="panel-body">
-        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何使用 Sing-box 配合 Clash Rules 实现精细分流？</h5></div>
-    <div class="panel-body">
-        将 Clash 的 rules 段提取出来转换为 Sing-box 的 routing 格式，或直接引用 rule-providers 源。Sing-box 的路由引擎支持更复杂的条件匹配，可结合 GeoIP 与 keyword 实现精细分流策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 V2Ray 中自定义路由规则？</h5></div>
-    <div class="panel-body">
-        在 V2Ray 中可以通过修改 config.json 文件中的 routing 部分来自定义路由规则。用户可以根据 IP 段、域名或地理位置来决定流量的去向，从而实现自动分流或访问加速的效果。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏连接？</h5></div>
-    <div class="panel-body">
-        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度和网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是什么？</h5></div>
-    <div class="panel-body">
-        Sing-box 是新一代多协议代理框架，支持 VMess、VLess、Trojan、Hysteria、ShadowTLS 等协议。它比传统 V2Ray 更轻量化、模块化，并针对移动端和 Linux 系统进行了性能优化，受到开发者和高级用户的欢迎。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
-    <div class="panel-body">
-        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。    </div>
+        根据网络封锁情况选择合适协议和混淆组合，例如 tls1.2_ticket_auth 模拟 HTTPS 流量。选择最佳组合可提高抗封锁能力和稳定性，保证节点长期可用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -405,16 +405,16 @@ APK文件为安卓系统专用，PC用户可下载其桌面版本客户端，或
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-node-subscribe-links.htm" title="V2rayX节点 | 11月22日23M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点分享">V2rayX节点 | 11月22日23M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-1-free-high-speed-nodes.htm" title="V2rayX节点 | 12月1日21.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享">V2rayX节点 | 12月1日21.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-free-shadowrocket-node.htm" title="V2rayX节点 | 11月15日18M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 11月15日18M/S|免费Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-18-free-v2ray.htm" title="V2rayX节点 | 11月18日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享">V2rayX节点 | 11月18日22.3M/S|免费Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-19-clash-windows.htm" title="V2rayX节点 | 11月19日21.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点分享">V2rayX节点 | 11月19日21.7M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-node-share.htm" title="V2rayX节点 | 11月7日18M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 11月7日18M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-11-clash-node.htm" title="V2rayX节点 | 11月11日22.9M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享">V2rayX节点 | 11月11日22.9M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-28-free-ssr-subscribe.htm" title="V2rayX节点 | 11月28日20.8M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅节点分享">V2rayX节点 | 11月28日20.8M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-11-free-node-subscribe-links.htm" title="V2rayX节点 | 12月11日20.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享">V2rayX节点 | 12月11日20.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-29-clash-v2ray-ss-ssr.htm" title="V2rayX节点 | 11月29日20.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点订阅节点分享">V2rayX节点 | 11月29日20.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-free-high-speed-nodes.htm" title="V2rayX节点 | 11月27日21.5M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点订阅节点分享">V2rayX节点 | 11月27日21.5M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点订阅节点分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-12-free-shadowrocket-node.htm" title="V2rayX节点 | 11月12日19.3M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">V2rayX节点 | 11月12日19.3M/S|免费Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-14-free-ssr-node.htm" title="V2rayX节点 | 12月14日19.6M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享">V2rayX节点 | 12月14日19.6M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-free-high-speed-nodes.htm" title="V2rayX节点 | 12月1日21.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享">V2rayX节点 | 12月1日21.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-10-free-ssr-node.htm" title="V2rayX节点 | 12月10日19.5M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅节点分享">V2rayX节点 | 12月10日19.5M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-11-free-node-subscribe-links.htm" title="V2rayX节点 | 12月11日20.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享">V2rayX节点 | 12月11日20.7M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-18-free-ssr-subscribe.htm" title="V2rayX节点 | 12月18日21.3M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享">V2rayX节点 | 12月18日21.3M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-9-free-v2ray.htm" title="V2rayX节点 | 12月9日18.2M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享">V2rayX节点 | 12月9日18.2M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-7-node-share.htm" title="V2rayX节点 | 12月7日18.9M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点分享">V2rayX节点 | 12月7日18.9M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -426,7 +426,7 @@ APK文件为安卓系统专用，PC用户可下载其桌面版本客户端，或
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
