@@ -354,9 +354,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
     <div class="panel-body">
-        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
+        启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何安装？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持多平台，包括 Windows、Linux、macOS 和 Android。可从官方 GitHub 页面下载预编译版本或通过命令行安装。配置文件采用 JSON 格式，兼容多种协议配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何按域名分流优化浏览器流量？</h5></div>
@@ -364,14 +369,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Sing-box 可通过规则匹配域名，将浏览器流量分配到最优节点。结合策略组，可保证网页访问速度和稳定性，同时优化视频和游戏等其他流量，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 在路由器上使用 TUN 模式会有什么影响？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现按应用分流？</h5></div>
     <div class="panel-body">
-        启用 TUN 模式会拦截并转发路由器上全部或选定流量，这会增加路由器 CPU 与内存负担，可能影响路由器其他服务表现。建议在性能足够的设备上启用，或仅对特定设备/端口进行分流。<hr />    </div>
+        V2Ray 支持按用户标签或端口匹配应用流量，结合策略组可实现指定应用走特定节点。这样可以保证游戏、视频和浏览器流量各自走最优线路，提高访问效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 延迟检测功能如何提高网络体验？</h5></div>
     <div class="panel-body">
         WinXray 会定期检测节点延迟，结合策略组自动切换到低延迟节点。保证网页、视频和游戏流量通过最佳节点，提高访问速度和连接稳定性，减少掉线和卡顿。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
+    <div class="panel-body">
+        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
@@ -384,24 +394,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Hysteria2 支持多用户配置，管理员可以在服务器端为不同用户分配独立凭证。这样既能保障隐私，也便于流量统计和限速控制，适合团队或小型共享环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
-    <div class="panel-body">
-        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的路由规则如何实现按应用分流？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持按用户标签或端口匹配应用流量，结合策略组可实现指定应用走特定节点。这样可以保证游戏、视频和浏览器流量各自走最优线路，提高访问效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何安装？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持多平台，包括 Windows、Linux、macOS 和 Android。可从官方 GitHub 页面下载预编译版本或通过命令行安装。配置文件采用 JSON 格式，兼容多种协议配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的伪装域名如何正确配置？</h5></div>
     <div class="panel-body">
-        伪装域名必须真实可访问且证书有效，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。    </div>
+        伪装域名必须真实可访问且证书有效，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
+    <div class="panel-body">
+        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -449,16 +449,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-7.htm" title="V2rayX节点 | 8月7日18M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 8月7日18M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-9-5.htm" title="V2rayX节点 | 9月5日21.4M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅节点分享">V2rayX节点 | 9月5日21.4M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-30-clash-node-daily-updates.htm" title="V2rayX节点 | 8月30日22.6M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点分享">V2rayX节点 | 8月30日22.6M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-22-node-share.htm" title="V2rayX节点 | 8月22日22.8M/S|免费Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点订阅节点分享">V2rayX节点 | 8月22日22.8M/S|免费Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-clash-v2ray-ss-ssr.htm" title="V2rayX节点 | 8月6日21.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点订阅节点分享">V2rayX节点 | 8月6日21.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-9-7.htm" title="V2rayX节点 | 9月7日18.8M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 9月7日18.8M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-1.htm" title="V2rayX节点 | 9月1日20.4M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享">V2rayX节点 | 9月1日20.4M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-24-clash-v2ray-ss-ssr.htm" title="V2rayX节点 | 8月24日18.3M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点分享">V2rayX节点 | 8月24日18.3M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-8-free-shadowrocket-node.htm" title="V2rayX节点 | 8月8日22.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点分享">V2rayX节点 | 8月8日22.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-clash-node-daily-updates.htm" title="V2rayX节点 | 8月10日20.4M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点分享">V2rayX节点 | 8月10日20.4M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-19.htm" title="V2rayX节点 | 8月19日21M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 8月19日21M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-8-29.htm" title="V2rayX节点 | 8月29日18.8M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点分享">V2rayX节点 | 8月29日18.8M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-16-clash-node-daily-updates.htm" title="V2rayX节点 | 8月16日20.8M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 8月16日20.8M/S|免费Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-27.htm" title="V2rayX节点 | 8月27日19.4M/S|免费Clash节点/SSR节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 8月27日19.4M/S|免费Clash节点/SSR节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-11.htm" title="V2rayX节点 | 8月11日22.5M/S|免费V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点订阅节点分享">V2rayX节点 | 8月11日22.5M/S|免费V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点订阅节点分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-8-25.htm" title="V2rayX节点 | 8月25日22.6M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点分享">V2rayX节点 | 8月25日22.6M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-13.htm" title="V2rayX节点 | 8月13日22.1M/S|免费SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享">V2rayX节点 | 8月13日22.1M/S|免费SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-9.htm" title="V2rayX节点 | 8月9日19.3M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点订阅节点分享">V2rayX节点 | 8月9日19.3M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点订阅节点分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -470,7 +470,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
